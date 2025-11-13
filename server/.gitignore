@@ -1,0 +1,50 @@
+# Node modules (never commit dependencies)
+node_modules/
+
+# Environment variables (contains secrets)
+.env
+.env.local
+.env.development.local
+.env.production.local
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Build and cache files
+dist/
+build/
+.tmp/
+.cache/
+coverage/
+.nyc_output/
+
+# Editor specific files
+.vscode/
+.idea/
+*.swp
+
+# Docker
+*.pid
+*.seed
+*.pid.lock
+
+# TypeScript build output
+*.tsbuildinfo
+
+# Optional: if using PM2 process manager
+pids/
+pms.json
+pm2.log
+
+# Optional: if using uploads
+uploads/
+public/uploads/
