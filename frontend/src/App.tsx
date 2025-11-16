@@ -18,7 +18,7 @@ export default function App() {
     setNotes(res.data);
   };
 
-  const addNote = async (title: string, content: string, id?: string) => {
+  const addNote = async (title: string, content: string) => {
     await axios.post(API_URL, { title, content });
     fetchNotes();
   };
