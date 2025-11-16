@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
-import axios from "axios";
-import NoteForm from "./components/NoteForm";
-import NoteList from "./components/NoteList";
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+import NoteForm from './components/NoteForm';
+import NoteList from './components/NoteList';
 
 interface Note {
   _id: string;
@@ -9,8 +9,7 @@ interface Note {
   content: string;
 }
 
-const API_URL = "http://localhost:5000/api/notes";
-
+const API_URL = import.meta.env.VITE_API_URL;
 export default function App() {
   const [notes, setNotes] = useState<Note[]>([]);
 
@@ -29,7 +28,7 @@ export default function App() {
     fetchNotes();
   };
 
- // ✅ Proper way to fetch data once on mount
+  // ✅ Proper way to fetch data once on mount
   useEffect(() => {
     const loadNotes = async () => {
       await fetchNotes();
@@ -37,12 +36,14 @@ export default function App() {
     loadNotes();
   }, []);
 
-  
   return (
-    <div style={{ width: "500px", margin: "auto", marginTop: "50px" }}>
-      <h1>🗒️ Notes App</h1>
-      <NoteForm addNote={addNote} />
-      <NoteList notes={notes} deleteNote={deleteNote} />
+    <div className="min-h-screen flex flex-col items-center justify-center  px-4">
+      <h1 className="text-3xl font-bold mb-6"> Notes App</h1>
+
+      <div className="w-full max-w-md bg-white p-6 rounded-xl shadow-lg">
+        <NoteForm addNote={addNote} />
+        <NoteList notes={notes} deleteNote={deleteNote} />
+      </div>
     </div>
   );
 }

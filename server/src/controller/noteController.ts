@@ -1,5 +1,5 @@
-import type { Request, Response } from "express";
-import { Note } from "../models/noteModel";
+import type { Request, Response } from 'express';
+import { Note } from '../models/noteModel';
 
 // GET all notes
 export const getNotes = async (req: Request, res: Response): Promise<void> => {
@@ -19,5 +19,5 @@ export const createNote = async (req: Request, res: Response): Promise<void> => 
 export const deleteNote = async (req: Request, res: Response): Promise<void> => {
   const { id } = req.params;
   await Note.findByIdAndDelete(id);
-  res.json({ message: "Note deleted" });
+  res.json({ message: 'Note deleted' });
 };
