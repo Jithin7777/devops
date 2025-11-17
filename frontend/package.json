@@ -10,7 +10,7 @@
     "lint:fix": "eslint . --fix",
     "prettier": "prettier --ignore-path .gitignore --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
     "prettier:fix": "prettier --write .",
-    "preview": "vite preview --host --port 5173"
+    "preview": "vite preview --host 0.0.0.0 --port 5173"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
