@@ -42,14 +42,14 @@ jobs:
         run: docker build -t frontend ./frontend
 
 
-deploy:
+  deploy:
     needs: build-and-lint
     if: github.event_name == 'push'
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout repo
-        uses: actions/checkout@v4
+        uses: actions/checkout@v3
 
       - name: Add EC2 host to known_hosts
         run: |
