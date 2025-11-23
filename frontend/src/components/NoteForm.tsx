@@ -35,7 +35,7 @@ export default function NoteForm({ addNote }: NoteFormProps) {
 
       <button
         type="submit"
-        className="mt-4 w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-blue-700 transition"
+        className="mt-4 w-full bg-blue-600 text-white p-3 rounded-lg hover:bg-black-700 transition"
       >
         Add Note
       </button>
